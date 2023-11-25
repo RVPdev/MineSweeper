@@ -1,11 +1,15 @@
 #pragma once
 #include <raylib.h>
 
-class grid
-{
-private:
-    /* data */
+class Grid
+{  
 public:
-    grid(/* args */);
-    ~grid();
+    Grid();
+    void Draw();
+
+private:
+
+    int numRows;
+    int numCols;
+    int cellSize;
 };
