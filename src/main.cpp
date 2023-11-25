@@ -1,8 +1,8 @@
 #include <raylib.h>
 #include "src/inlcude/grid.h"
 
-int screenWitdh = 400;
-int screenHeigth = 400;
+int screenWitdh = 600;
+int screenHeigth = 600;
 
 int main()
 {
@@ -10,6 +10,7 @@ int main()
     SetTargetFPS(60);
 
     Grid grid = Grid();
+    grid.Print();
 
     while (!WindowShouldClose())
     {
