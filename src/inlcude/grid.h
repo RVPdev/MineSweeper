@@ -6,6 +6,9 @@ class Grid
 public:
     Grid();
     void Draw();
+    void Initialize();
+    void Print();
+    int grid[15][15];
 
 private:
 
