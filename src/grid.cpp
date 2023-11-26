@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdLib>
 #include <ctime>
+#include "src/inlcude/grid.h"
 
 // Constructor for the Grid class
 Grid::Grid()
@@ -30,10 +31,11 @@ void Grid::Initialize()
         int randomRow = rand() % numRows; // Generate a random row index
         int randomCol = rand() % numCols; // Generate a random column index
 
-        // Place an asterisk (represented by 1) if the cell is empty (0)
+        // Place a mine (represented by 9) if the cell is empty (0)
         if (grid[randomRow][randomCol] == 0)
         {
-            grid[randomRow][randomCol] = 9; // 1 represents an asterisk
+            grid[randomRow][randomCol] = 9; // 9 represents a mine
+            Surround(randomRow, randomCol);
             count++;
         }
     }
@@ -50,6 +52,18 @@ void Grid::Print()
         }
         std::cout << std::endl; // Print a newline at the end of each row
     }
+}
+
+void Grid::Surround(int row, int col)
+{
+    grid[row + 1][col + 1] += 1; // bottom right
+    grid[row][col + 1] += 1;     // right
+    grid[row - 1][col + 1] += 1; // top right
+    grid[row - 1][col] += 1;     // top
+    grid[row - 1][col - 1] += 1; // top left
+    grid[row][col - 1] += 1;     // left
+    grid[row + 1][col - 1] += 1; // bottom left
+    grid[row + 1][col] += 1;     // bottom
 }
 
 // Draw method to render the grid on the screen
