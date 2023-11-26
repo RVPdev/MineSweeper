@@ -1,5 +1,5 @@
 #include <raylib.h>
-#include "src/inlcude/grid.h"
+#include "src/inlcude/game.h"
 
 int screenWitdh = 600;
 int screenHeigth = 600;
@@ -9,8 +9,11 @@ int main()
     InitWindow(screenWitdh, screenHeigth, "Mine Sweeper");
     SetTargetFPS(60);
 
-    Grid grid = Grid();
-    grid.Print();
+    Game game = Game();
+    // Grid grid = Grid();
+    // grid.Print();
+
+    game.grid.Print();
 
     while (!WindowShouldClose())
     {
@@ -18,7 +21,7 @@ int main()
         BeginDrawing();
         ClearBackground(WHITE);
 
-        grid.Draw();
+        game.Draw();
         
         EndDrawing();
     }
