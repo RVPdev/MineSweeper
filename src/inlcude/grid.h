@@ -12,10 +12,13 @@ public:                                  // Public members and methods are acces
     void Surround(int row, int col);     // method for adding 1 to the surrounding mine
     int grid[15][15];                    // A 2D array representing the grid itself. Each element can store an integer value.
     bool ContainsMine(int row, int col); // A method to know if a cell contains a mine
-    bool IsCellEmpty(int row, int col); // A mehtod to know if cell is empty
+    bool IsCellEmpty(int row, int col);  // A mehtod to know if cell is empty
+    int GetCellSize();
+    int GetCols();
+    int GetRows();
 
 private:          // Private members and methods are only accessible from within the class
+    int cellSize; // Variable to store the size of each cell in the grid. This could be used for drawing.
     int numRows;  // Variable to store the number of rows in the grid.
     int numCols;  // Variable to store the number of columns in the grid.
-    int cellSize; // Variable to store the size of each cell in the grid. This could be used for drawing.
 };

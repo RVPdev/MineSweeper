@@ -112,3 +112,13 @@ bool Grid::IsCellEmpty(int row, int col)
 
     return false;
 }
+
+int Grid::GetCellSize(){
+    return cellSize;
+}
+int Grid::GetCols(){
+    return numCols;
+}
+int Grid::GetRows(){
+    return numRows;
+}

@@ -10,8 +10,6 @@ int main()
     SetTargetFPS(60);
 
     Game game = Game();
-    // Grid grid = Grid();
-    // grid.Print();
 
     game.grid.Print();
 
