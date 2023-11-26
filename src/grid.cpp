@@ -78,3 +78,22 @@ void Grid::Draw()
         }
     }
 }
+
+bool Grid::ContainsMine(int row, int col)
+{
+    if(grid[row][col] >= 9)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+bool Grid::IsCellEmpty(int row, int col){
+    if(grid[row][col] == 0)
+    {
+        return true;
+    }
+
+    return false;
+}
