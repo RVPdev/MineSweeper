@@ -10,7 +10,6 @@ public:                // Public members and methods are accessible from outside
     void Initialize(); // Method to initialize or reset the grid to a default state.
     void Print();      // Method for debugging purposes to print the grid's current state to the console or a log.
     int grid[15][15];  // A 2D array representing the grid itself. Each element can store an integer value.
-    // The size of the grid is 15x15 cells.
 
 private:          // Private members and methods are only accessible from within the class
     int numRows;  // Variable to store the number of rows in the grid.

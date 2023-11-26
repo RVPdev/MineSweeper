@@ -1,5 +1,7 @@
 #include "src/inlcude/grid.h"
 #include <iostream>
+#include <cstdLib>
+#include <ctime>
 
 // Constructor for the Grid class
 Grid::Grid()
@@ -18,6 +20,21 @@ void Grid::Initialize()
         for (int col = 0; col < numCols; col++) // Loop through each column
         {
             grid[row][col] = 0; // Set the value of each cell in the grid to 0
+        }
+    }
+
+    // Now randomly place 15 asterisks in the grid
+    int count = 0;
+    while (count < 15)
+    {
+        int randomRow = rand() % numRows; // Generate a random row index
+        int randomCol = rand() % numCols; // Generate a random column index
+
+        // Place an asterisk (represented by 1) if the cell is empty (0)
+        if (grid[randomRow][randomCol] == 0)
+        {
+            grid[randomRow][randomCol] = 9; // 1 represents an asterisk
+            count++;
         }
     }
 }
