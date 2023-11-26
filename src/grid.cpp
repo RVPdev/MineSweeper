@@ -79,6 +79,7 @@ void Grid::Draw()
     }
 }
 
+// Bool method to check exixtances of mines
 bool Grid::ContainsMine(int row, int col)
 {
     if(grid[row][col] >= 9)
@@ -89,6 +90,7 @@ bool Grid::ContainsMine(int row, int col)
     return false;
 }
 
+// Boll to check if cell is 0 or empty 
 bool Grid::IsCellEmpty(int row, int col){
     if(grid[row][col] == 0)
     {
